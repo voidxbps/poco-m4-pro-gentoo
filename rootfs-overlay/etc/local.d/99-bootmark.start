@@ -1,0 +1,2 @@
+#!/bin/sh
+echo " gentoo userspace up $(date)" >> /gentoo-root-up

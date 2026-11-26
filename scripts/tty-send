@@ -1,0 +1,8 @@
+#!/bin/sh
+# Send text to the Gentoo framebuffer TTY on the phone.
+# Usage:  echo "uname -a" | ./tty-send
+#     or  printf 'root\n' | ./tty-send
+# For login, send username and password as separate calls:
+#     printf 'root\n'    | ./tty-send
+#     printf 'gentoo\n'  | ./tty-send
+cat | adb shell 'cat > /var/tmp/tty-input'

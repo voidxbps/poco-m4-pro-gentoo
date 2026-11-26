@@ -1,0 +1,20 @@
+#!/system/bin/sh
+mkdir -p /dev/dri
+mknod /dev/dri/card0 c 226 0 2>/dev/null
+chmod 666 /dev/dri/card0 2>/dev/null
+mknod /dev/kmsg c 1 11 2>/dev/null
+mknod /dev/ptmx c 5 2 2>/dev/null
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts 2>/dev/null
+(
+sleep 12
+/sbin/gentty >/var/log/gentty.log 2>&1 &
+while true; do
+  if [ -e /var/tmp/reboot-bootloader ]; then
+    rm -f /var/tmp/reboot-bootloader
+    /sbin/rebootboot
+  fi
+  sleep 1
+done
+) &
+exit 0

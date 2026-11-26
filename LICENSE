@@ -1,0 +1,7 @@
+This project contains:
+  - Original scripts and C helpers: GPL-2.0-or-later
+  - Linux kernel and MediaTek vendor drivers: GPL-2.0 (see kernel headers)
+  - Gentoo base system: individual package licences (GPL/LGPL/BSD/MIT/etc.)
+  - Terminus console font: MIT/GPL (kbd project)
+
+SPDX-License-Identifier: GPL-2.0-or-later

@@ -1,0 +1,4 @@
+echo DELAYED
+sleep 8
+(echo musb-hdrc > /config/usb_gadget/g1/UDC) 2>/dev/null; echo delayed_udc=$?
+echo UDC=$(cat /config/usb_gadget/g1/UDC 2>&1)

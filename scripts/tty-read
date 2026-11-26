@@ -1,0 +1,3 @@
+#!/bin/sh
+# Read the latest output from the Gentoo framebuffer TTY.
+adb shell 'cat /var/tmp/tty-output 2>/dev/null' | sed 's/\x1b\[[0-9;?]*[a-zA-Z]//g'
